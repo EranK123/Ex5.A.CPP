@@ -11,11 +11,11 @@ OrgChart::OrgChart(){
 
 }
 
-OrgChart OrgChart::add_root(string position){
+OrgChart& OrgChart::add_root(string position){
 return *this;
 }
 
-OrgChart OrgChart::add_sub(string higherPosName, string lowerPosName){
+OrgChart& OrgChart::add_sub(string higherPosName, string lowerPosName){
 return *this;
 }
 

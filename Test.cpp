@@ -32,38 +32,39 @@ TEST_CASE("Good"){
     OrgChart::Iterator it;
     for (it = organization.begin_level_order(); it != organization.end_level_order(); ++it)
   {
+
     s.push_back(*it);
   }
-   CHECK(s[0] == "CEO");
-   CHECK(s[1] == "CTO");
-   CHECK(s[2] == "CFO");
-   CHECK(s[3] == "COO");
-   CHECK(s[4] == "VP_SW");
+   CHECK(s.at(0) == "CEO");
+   CHECK(s.at(1) == "CTO");
+   CHECK(s.at(2) == "CFO");
+   CHECK(s.at(3) == "COO");
+   CHECK(s.at(4) == "VP_SW");
   for ( it = organization.begin_reverse_order(); it != organization.reverse_order(); ++it)
   {
     s.push_back(*it);
   }
-   CHECK(s[0] == "VP_SW");
-   CHECK(s[1] == "CTO");
-   CHECK(s[2] == "CFO");
-   CHECK(s[3] == "COO");
-   CHECK(s[4] == "CEO");
+   CHECK(s.at(0) == "VP_SW");
+   CHECK(s.at(1) == "CTO");
+   CHECK(s.at(2) == "CFO");
+   CHECK(s.at(3) == "COO");
+   CHECK(s.at(4) == "CEO");
    for ( it = organization.begin_preorder(); it != organization.end_preorder(); ++it)
   {
     s.push_back(*it);
   }
-  CHECK(s[0] == "CEO");
-   CHECK(s[1] == "CTO");
-   CHECK(s[2] == "VP_SW");
-   CHECK(s[3] == "CFO");
-   CHECK(s[4] == "COO");
+   CHECK(s.at(0) == "CEO");
+   CHECK(s.at(1) == "CTO");
+   CHECK(s.at(2) == "VP_SW");
+   CHECK(s.at(3) == "CFO");
+   CHECK(s.at(4) == "COO");
    for (auto element : organization)
   { 
     s.push_back(*it);
   }
-   CHECK(s[0] == "CEO");
-   CHECK(s[1] == "CTO");
-   CHECK(s[2] == "CFO");
-   CHECK(s[3] == "COO");
-   CHECK(s[4] == "VP_SW"); 
+   CHECK(s.at(0) == "CEO");
+   CHECK(s.at(1) == "CTO");
+   CHECK(s.at(2) == "CFO");
+   CHECK(s.at(3) == "COO");
+   CHECK(s.at(4) == "VP_SW"); 
 }

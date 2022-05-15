@@ -18,8 +18,8 @@ namespace ariel{
         
         public:
         OrgChart();
-        OrgChart add_root(string position);
-        OrgChart add_sub(string higherPosName, string lowerPosName);
+        OrgChart& add_root(string position);
+        OrgChart& add_sub(string higherPosName, string lowerPosName);
         friend ostream& operator<<(ostream& output, const OrgChart &org);
     class Iterator{
       private:
@@ -28,19 +28,20 @@ namespace ariel{
       public:
       Iterator(){
           this->index = 0;
-          this->currentNode = nullptr;
+          this->currentNode = NULL;
       }
     //   Iterator(Node* ptr = nullptr){
     //       this->currentNode = ptr;
     //   }
       bool operator!=(const Iterator& it) const{
-          return true;
+          return false;
       }
-     Iterator operator++(int){
-          return Iterator();
+     const Iterator operator++(int){
+         Iterator t = *this;
+          return t;
       }
-      Iterator operator++(){
-          return Iterator();
+      Iterator& operator++(){
+          return *this;
       }
       string operator*() const{
           return "";
