@@ -15,8 +15,6 @@ TEST_CASE("Bad"){
      CHECK_THROWS(organization.add_sub("COO", "VP_BI"));
      CHECK_THROWS(organization.add_sub("CFO", "VP_BI"));
     
-
-     organization = organization.add_root("CEO").add_sub("CEO", "CFO");
 }
 
 
